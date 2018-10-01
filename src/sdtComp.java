@@ -41,7 +41,7 @@ public class sdtComp extends GameDriverV3 implements MouseListener, KeyListener{
 	RadioUI radioU;
 	Random r1;
 	SoundDriver s1;
-	FileDriverV2 f1;
+	//FileDriverV2 f1;
 	Font font;
 	
 	public sdtComp() {
@@ -146,9 +146,10 @@ public class sdtComp extends GameDriverV3 implements MouseListener, KeyListener{
 		s1 = new SoundDriver(str);
 		
 		//file driver
+		/*
 		f1 = new FileDriverV2();
 		f1.createFolder("sdtscores", null);
-		
+		*/
 		
 		
 		//classes
@@ -236,7 +237,7 @@ public class sdtComp extends GameDriverV3 implements MouseListener, KeyListener{
 		if(gamestate == 3) {
 			win.setFont(font);
 			win.setColor(Color.BLACK);
-			win.drawString("Highscores on " +user+"'s computer:", 120, 100);
+			win.drawString("highscores not implemented yet", 120, 100);
 			
 			for(int i = 0; i<topscore.size();i++) {
 				win.drawString(i+1+". "+topscore.get(i), 120 , 130+30*i);
@@ -285,6 +286,7 @@ public class sdtComp extends GameDriverV3 implements MouseListener, KeyListener{
 	
 	//getting list from save file and reordering them
 	private void getOrder() {
+		/*
 		if(!f1.readText("score", "sdtscores",false).equals("")){
 			scores = f1.readText("score", "sdtscores", false);
 			String[] nums = scores.split("-");
@@ -298,6 +300,7 @@ public class sdtComp extends GameDriverV3 implements MouseListener, KeyListener{
 		
 		Collections.sort(topscore);
 		Collections.reverse(topscore);
+		*/
 	}
 	
 	
@@ -336,19 +339,26 @@ public class sdtComp extends GameDriverV3 implements MouseListener, KeyListener{
 	private void objectHandle(Graphics2D win) {
 		
 		if(gamestate == 1) {
+			
 			for(int i=obj.size()-1;i>1;i--) {
+				
 				if(obj.get(i).hit && !draw) {
 					finalobj = i;
+					/*
 					if(f1.readText("score", "sdtscores", false) != null)
 						f1.saveText(f1.readText("score", "sdtscores", false)+(mtime*60+stime)/2 + "-", "score", "sdtscores");
 					else {
 						f1.saveText(""+(mtime*60+stime)/2 + "-", "score", "sdtscores");
 					}
+					
 					topscore.add((mtime*60+stime)/2);
 					Collections.sort(topscore);
 					Collections.reverse(topscore);
+					*/
 					gamestate = -1;
+			
 				}
+		
 		
 			obj.get(i).moveAndDraw(win, (int) wcontrol.wheel_timer, SPEED, wcontrol.steering);
 			
