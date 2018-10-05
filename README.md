@@ -1,6 +1,7 @@
 # SafeDriverTest
 Java GUI game
 High school senior year final project. The gear box is used to chose menus and the enter button is to enter the choosen menu. Goal is to avoid the trees using the mouse to turn the wheel and not crash. The wheel sensetivity can be changed through the instructions menu and using the arrow buttons on the dash.  
+GameDriver and SoundDriver classes were made by Jonathan Gonzales
 
 **Menu:**
 
